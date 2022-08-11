@@ -71,11 +71,15 @@ const Navbar = () => {
         </ol>
         <div className="flex">
           <Link passHref={true} href={"/checkout"}>
-            <button className="flex mr-2 mt-8 text-white bg-pink-500 border-0 py-1 px-3 focus:outline-none hover:bg-pink-600 rounded text-sm">
+            <button className="flex mr-2  text-white bg-pink-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-sm">
               <BsFillCartCheckFill className="m-1" />
               Checkout
             </button>
           </Link>
+          <button className="flex mr-2  text-white bg-pink-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-sm">
+            <BsFillCartCheckFill className="m-1" />
+            Clear Cart
+          </button>
         </div>
       </div>
     </div>
