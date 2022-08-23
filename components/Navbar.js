@@ -22,7 +22,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
   };
   const ref = useRef();
   return (
-    <div className="flex flex-col md:flex-row md:justify-start justify-center items-center py-2 shadow-md">
+    <div className="flex flex-col md:flex-row md:justify-start justify-center items-center py-2 shadow-md sticky top-0 bg-white z-10">
       <div className="logo">
         <Image width={200} height={40} src="/logo.png" alt="" />
       </div>
@@ -48,7 +48,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
       </div>
       <div
         ref={ref}
-        className="w-72 sideCart absolute top-0 right-0 bg-pink-100 p-10 transform transition-transform translate-x-full"
+        className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-pink-100 p-10 transform transition-transform ${Object.keys(cart).length===0 ?'translate-x-full':'translate-x-0' }`}
       >
         <h2 className="font-bold text-xl">Shopping Cart</h2>
         <span
@@ -100,6 +100,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
             );
           })}
         </ol>
+        <h3 className="font-bold mx-2">SubTotal : ₹{subTotal}</h3>
         <div className="flex">
           <Link passHref={true} href={"/checkout"}>
             <button className="flex mr-2  text-white bg-pink-500 border-0 py-2 px-2 focus:outline-none hover:bg-pink-600 rounded text-sm">

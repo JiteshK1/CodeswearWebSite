@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
     try {
       if (localStorage.getItem("cart")) {
         setCart(JSON.parse(localStorage.getItem("cart")));
+        saveCart(JSON.parse(localStorage.getItem("cart")))
       }
     } catch (error) {
       console.error(error);
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   const saveCart = (myCart) => {
-    localStorage.getItem("cart", JSON.stringify(myCart));
+    localStorage.setItem("cart", JSON.stringify(myCart));
     let subt = 0;
     let keys = Object.keys(myCart);
     for (let i = 0; i < keys.length; i++) {
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
     }
     setSubTotal(subt);
   };
+
 
   const addToCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = JSON.parse(JSON.stringify(cart));
@@ -57,6 +59,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navbar
+      key={subTotal}
         cart={cart}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
