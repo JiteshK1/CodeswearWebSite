@@ -10,6 +10,7 @@ import {
 import { BsFillCartCheckFill } from "react-icons/bs";
 BsFillCartCheckFill;
 import { useRef } from "react";
+import { MdAccountCircle } from 'react-icons/md';
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
   const toggleCart = () => {
     if (ref.current.classList.contains("translate-x-full")) {
@@ -40,7 +41,12 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
           <a className="mr-5 text-pink-700 hover:text-black">Mugs</a>
         </Link>
       </nav>
-      <div className="cart absolute right-0 top-4 mx-5">
+      <div className="cart absolute right-0 top-4 mx-5 flex">
+      <Link href={"/login"}>
+                        <a>
+                        <MdAccountCircle className="text-xl md:text-2xl mx-2 "/>
+                        </a>
+                    </Link>
         <AiOutlineShoppingCart
           onClick={toggleCart}
           className="cursor-pointer text-xl md:text-2xl"
