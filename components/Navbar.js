@@ -42,11 +42,11 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         </Link>
       </nav>
       <div className="cart absolute right-0 top-4 mx-5 flex">
-      <Link href={"/login"}>
-                        <a>
-                        <MdAccountCircle className="text-xl md:text-2xl mx-2 "/>
-                        </a>
-                    </Link>
+        <Link href={"/login"}>
+          <a>
+            <MdAccountCircle className="text-xl md:text-2xl mx-2 " />
+          </a>
+        </Link>
         <AiOutlineShoppingCart
           onClick={toggleCart}
           className="cursor-pointer text-xl md:text-2xl"
@@ -54,7 +54,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
       </div>
       <div
         ref={ref}
-        className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-pink-100 p-10 transform transition-transform ${Object.keys(cart).length===0 ?'translate-x-full':'translate-x-0' }`}
+        className={`w-72 h-[100vh] sideCart absolute top-0 right-0 bg-pink-100 p-10 transform transition-transform ${Object.keys(cart).length === 0 ? 'translate-x-full' : 'translate-x-0'}`}
       >
         <h2 className="font-bold text-xl">Shopping Cart</h2>
         <span
@@ -71,7 +71,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
             return (
               <li key={k}>
                 <div className="item flex my-5">
-                  <div className="w-2/3 font-semibold">{cart[k].name}</div>
+                  <div className="w-2/3 font-semibold">{cart[k].name} {cart[k].size}/{cart[k].variant}</div>
                   <div className="flex items-center justify-center w-1/3 text-lg ">
                     <AiOutlineMinusCircle
                       onClick={() => {
