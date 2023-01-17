@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import mongoose from 'mongoose';
 import Product from '../../models/Product';
-const Post = ({ addToCart, product, variants }) => {
+const Post = ({ buyNow, addToCart, product, variants }) => {
   console.log(variants);
   const router = useRouter();
   const { slug } = router.query;
@@ -94,22 +94,19 @@ const Post = ({ addToCart, product, variants }) => {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   {product.price}
                 </span>
-                <button
-                  onClick={() => {
-                    addToCart(
-                      slug,
-                      1,
-                      product.price,
-                      product.title,
-                      size,
-                      color
-                    );
-                  }}
+                <button onClick={() => { addToCart(slug, 1, product.price, product.title, size, color) }}
                   className="flex ml-3 text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-sm"
                 >
                   Add To Cart
                 </button>
-                <button className="flex ml-3 text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-sm">
+                <button onClick={() => {
+                  buyNow(slug,
+                    1,
+                    product.price,
+                    product.title,
+                    size,
+                    color)
+                }} className="flex ml-3 text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-sm">
                   Buy Now
                 </button>
 
