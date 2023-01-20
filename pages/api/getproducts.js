@@ -28,7 +28,7 @@ import connectDb from "../../middleware/mongoose"
 //     res.status(200).json({ tshirts })
 
 const handler = async (req, res) => {
-    let products = await Products.find()
+    let products = await Product.find()
     let tshirts = {}
     for (let item of products) {
         if (item.title in tshirts) {
