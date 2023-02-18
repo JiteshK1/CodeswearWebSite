@@ -3,7 +3,7 @@ import connectDb from "../../middleware/mongoose"
 
 const handler=async(req,res)=>{
     if(req.method == 'POST'){
-    
+   
 
         for (let i = 0; i < req.body.length; i++) {
             let p = new Product({

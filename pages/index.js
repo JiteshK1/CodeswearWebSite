@@ -145,7 +145,7 @@ export default function Home() {
                     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
                   </svg>
                 </div>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
+                <h2 className="text-lg text-s font-medium title-font mb-2">
                   Bunker
                 </h2>
                 <p className="leading-relaxed text-base">
@@ -155,7 +155,7 @@ export default function Home() {
               </div>
             </div>
             <div className="xl:w-1/3 md:w-1/2 p-4">
-              <div className="border border-orange-500 p-6 rounded-lg">
+              <div className="border border-orange p-6 rounded-lg">
                 <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4 ">
                   <svg
                     fill="none"
@@ -182,5 +182,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  );
+);
 }
