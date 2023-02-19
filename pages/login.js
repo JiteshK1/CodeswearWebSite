@@ -38,7 +38,9 @@ const Login = () => {
     // console.log(response);
     setpass("");
     setemail("");
+    console.log(response.success);
     if(response.success) {
+      localStorage.setItem("token",response.token);
       toast.success('You are successfully logged in!', {
         position: "bottom-center",
         autoClose: 3000,
