@@ -1,0 +1,17 @@
+{
+    "head": {
+      "responseTimestamp": "1669227222637",
+      "version": "v1",
+      "signature": "0uRnOqhHMhZ5L6DzUjmAcQwQ1WzIqqfXkbRJArm4DAn9wImufTZnrev3Cy6+lgVTygvtqOUXnnmdCj+HKFW9Sz/wtUPWawpEp9mWMpUc6fM="
+    },
+    "body": {
+      "resultInfo": {
+        "resultStatus": "S",
+        "resultCode": "0000",
+        "resultMsg": "Success"
+      },
+      "txnToken": "45a9626d8fd9405e8aeb41ee83ec3a241669227222107",
+      "isPromoCodeValid": false,
+      "authenticated": false
+    }
+  }
